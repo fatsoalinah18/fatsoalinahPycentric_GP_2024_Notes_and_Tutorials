@@ -195,3 +195,18 @@ Calculations with <,> results to boolean data type.
 ~~~
 cart = ["milk", "tea", "jam"]
 ~~~
+
+## Slicing
+- **Slicing** allows you to extract a portion of a list. Starting and stopping indexes are separated by a **colon**.
+- The starting index is inclusive and the stopping index is exclusive.
+
+### Example
+~~~
+animals =['dog', 'cat', 'bird', 'cow'] 
+print(animals[:1]) 
+<!-- Omitting the starting index means slicing from the first element. -->
+~~~
+### Output
+~~~
+['dog']
+~~~
