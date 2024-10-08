@@ -192,21 +192,105 @@ Calculations with <,> results to boolean data type.
 - **Lists** allow you to store a collection of multiple values in a single variable.
 - They can store any data type.
 - You can access an item in a list using its position or **index number.**
+- Negative indexing - indexing from the end.
+
 ~~~
 cart = ["milk", "tea", "jam"]
 ~~~
 
 ## Slicing
 - **Slicing** allows you to extract a portion of a list. Starting and stopping indexes are separated by a **colon**.
+- *Strings* are **immutable** in python while _list_ are **mutable**.
 - The starting index is inclusive and the stopping index is exclusive.
+- Omitting the starting index will slice data from the first element. An in that same way, omitting the stopping index will slice until the very last element and it's called **negative indexing**. 
+- Negative indexing means that the last value of a sequence has an index of -1.
+- It's possible to combine positive with negative indexing when slicing.
 
 ### Example
 ~~~
 animals =['dog', 'cat', 'bird', 'cow'] 
 print(animals[:1]) 
-<!-- Omitting the starting index means slicing from the first element. -->
+
 ~~~
 ### Output
 ~~~
 ['dog']
+~~~
+
+# Loops and Lists
+## Iterating over Lists
+
+- To check if an item is in a particular list the **in** operator is used. It returns True if the item occurs one or more times in the list, and False if it doesn’t.
+
+### Example
+
+~~~
+products = ['milk', 'eggs', 'apples']
+print('bread' in products)
+~~~
+
+### Output
+~~~
+False
+~~~
+
+- The __for__ loop can be used with the in operator to iterate over lists and perform the sam eoperation for each element.
+
+### Example
+
+~~~
+products = ['milk', 'eggs', 'apples']
+for i in products:
+  print(i)
+~~~
+
+### Output
+~~~
+milk
+eggs
+apples
+~~~
+
+## Nested Loops
+
+### Example
+
+~~~
+ranks = ["Ace", "King", "Queen"]
+suits = ["Hearts", "Clubs", "Diamonds"]
+
+for rank in ranks:
+  for suit in suits:
+    print(rank, suit)
+~~~
+
+### Output
+
+~~~
+Ace Hearts
+Ace Clubs
+Ace Diamonds
+King Hearts
+King Clubs
+King Diamonds
+Queen Hearts
+Queen Clubs
+Queen Diamonds
+~~~
+
+## Iterations and selections
+
+### Initializing a counter and using a for loop.
+~~~
+counter = 0
+devices = ['PC', 'TV', 'PS', 'TV', 'PS', 'Xbox', 'TV']
+for device in devices:
+  if device == 'TV':
+    counter = counter +1
+print("Number of TVs:", counter)
+~~~
+
+### Output
+~~~
+Number of TVs: 3
 ~~~
