@@ -164,13 +164,13 @@ The code you want to display in a for loop, i.e. your print() statement, should 
 
 - To signal the start of the iteration block, the initial loop statement must be followed by a **colon**.
 
-**NB: In general, use _for_ loops when the number of iterations is known.**
+**NB: In general, use `for` loops when the number of iterations is known.**
 
 ## While loop
 
 - They can be used even when you don’t know how many iterations will be needed.
-- **While** loops  repeat code whilst a condition holds true.
-- A **counter** is a variable that keeps track of the number of iterations.
+- `While` loops  repeat code whilst a condition holds true.
+- A `counter` is a variable that keeps track of the number of iterations.
 - An infinite loop is possible with this loop and counters help avoid them.
 
 ~~~
@@ -180,7 +180,7 @@ while seats > 0:
 seats = seats - 1 #counter
 ~~~
 
-**NB: In general, use _While_ loops when there is a condition that needs to be met.**
+**NB: In general, use `While` loops when there is a condition that needs to be met.**
 
 **NOTE**
 ~~~
@@ -188,7 +188,7 @@ Calculations with <,> results to boolean data type.
 ~~~
 
 # Collections
-- **Lists** are ordered collections of items. 
+- `Lists` are ordered collections of items. 
 - **Lists** allow you to store a collection of multiple values in a single variable.
 - They can store any data type.
 - You can access an item in a list using its position or **index number.**
@@ -199,7 +199,7 @@ cart = ["milk", "tea", "jam"]
 ~~~
 
 ## Slicing
-- **Slicing** allows you to extract a portion of a list. Starting and stopping indexes are separated by a **colon**.
+- `Slicing` allows you to extract a portion of a list. Starting and stopping indexes are separated by a **colon**.
 - *Strings* are **immutable** in python while _list_ are **mutable**.
 - The starting index is inclusive and the stopping index is exclusive.
 - Omitting the starting index will slice data from the first element. An in that same way, omitting the stopping index will slice until the very last element and it's called **negative indexing**. 
@@ -220,7 +220,7 @@ print(animals[:1])
 # Loops and Lists
 ## Iterating over Lists
 
-- To check if an item is in a particular list the **in** operator is used. It returns True if the item occurs one or more times in the list, and False if it doesn’t.
+- To check if an item is in a particular list the `in` operator is used. It returns True if the item occurs one or more times in the list, and False if it doesn’t.
 
 ### Example
 
@@ -294,3 +294,82 @@ print("Number of TVs:", counter)
 ~~~
 Number of TVs: 3
 ~~~
+### break and continue statement
+
+- The `break` statement stops a loop hen a condition is met.
+
+
+- The `continue` statement allows you to skip the current iteration of a loop when a certain condition is true.
+
+# Functions
+
+## Functions
+
+- A `function` contains code to perform a task, and it has to be called in order to be used.
+
+- `range()` and `print()` are examples of built-in functions.
+
+## String functions
+- All these functions use __dot notation__.
+- `upper()` - Changes the string to all in uppercase.
+
+~~~
+print('Smartphone'.upper())
+# Output = SMARTPHONE
+~~~
+
+- `lower()` -Changes the string to all in lowercase.
+
+
+~~~
+print('Smartphone'.lower())
+
+# Output = smartphone
+~~~
+
+- `capitalize()` - Converts the first character of a string to uppercase, while making the remaining characters lowercase.
+- `find()` - checks if a character (or a pattern of characters) is present in a string. It returns `-1` if the value can't be found in the string.
+
+## Built-in list functions
+
+- `len()` - When used on lists, it returns the number of items in the list.
+- `append()` - Adds a new item at the end of a list. This function uses `dot notation` as it's specific to lists.
+- `insert()` - It allows the addition of an element to a list at a specific position.
+
+~~~
+items.insert(2,"marker")
+~~~
+
+- `pop()` - It removes an element from a list. The only argumentt is the index of the element to be removed.
+
+## Custom functions
+
+A **function** is a reusable block of code.
+
+### Defining a function
+
+~~~
+def greet():
+  print("Hello from a function")
+  print("Have a great day")
+~~~
+
+When this function is called, it will display the two `print()` statements.
+
+- `return()` - It sends the results of a function back. It is mostly helpful for the continuous use of the result.
+
+## More on custom functions
+
+- `rect()` - It calculates the area and perimeter of a rectangle. An it takes two paramenters, **length** and **width**.
+
+~~~
+def rect(length, width):
+  area = length * width
+  perimeter = 2 * length + 2 * width
+  return area, perimeter 
+
+x, y = rect(50, 100) #2 variables
+print(x, y)
+~~~
+
+
