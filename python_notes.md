@@ -371,5 +371,3 @@ def rect(length, width):
 x, y = rect(50, 100) #2 variables
 print(x, y)
 ~~~
-
-
