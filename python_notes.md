@@ -1,373 +1,502 @@
  # Python Notes
-- Python is case-sensitive.
-- It uses snake case.
 
- ## Data types
- - Integers **(int)**
- - String **(str)**
- - Float -**float**
- - Boolean **(bool)**
+## Variables and Data Types
 
-> - Using the '+' operator with strings is known as __concatenation__.
-> - Data conversion assists with data quality issues.
-> 
-
-## input()
- - **input()** - Used to receive input from user.
- - Always collects data as a string by default.
-
-## print()
-- **print** - Used to display output.
-
-## type()
-- **type()** - an instruction used to check the data type stored in a variable.
-~~~
-x = "18"
-print(type(x))
-~~~
-### Output
-~~~
-<class 'str'>
-~~~
-
-# Explicit conversions
-These are performed by an instruction given by a programmer.
-
-## 1. int()
--  **int()** - an instruction that converts any type of value into an integer.
-~~~
-x = "18"
-print(type(x))
-y = int(x)
-print(type(y))
-~~~
-
-### Output
-~~~
-<class 'str'>
-<class 'int'>
-~~~
-
-## 2. float()
-- __float()__ - an instruction that converts any type of value into a float.
-~~~
-x = "18"
-print(type(x))
-y = float(x)
-print(type(y))
-~~~
-### Output
-~~~
-<class 'str'>
-<class 'float'>
-~~~
-## 3. str()
-- **str()** - an instruction that converts any type of value into a string.
-~~~
-x = 18
-print(type(x))
-y = str(x)
-print(type(y))
-~~~
-### Output
-~~~
-<class 'int'>
-<class 'str'>
-~~~
-
-# Implicit conversion
-These are performed by an instruction given by the computer.
-
-### Example
-~~~
-x = 5
-y = 2
-z = x/y  #float - implicit conversion
-print(z)
-~~~
-
-### Output
-~~~
-2.5
-~~~
-# Comparison operator
-**Comparison operations** - Key to the development of computer programs.
-
-- The result of a comparison operation in Python is either **True** or **False.**
-> Both the "__and__" and "**or**" operators are in lowercase.
->
->
-## "and" operator
-- T **and** T = T
-- Every other combination = F
-
-## "or" operator
-- F **or** F = F
-- Any combination with T = T
-
-# Control flow
-### Sequences
-The computer runs your code in order, from top to bottom.
-
-### Iterations
-- Executing an instruction repeatedly. 
-- Iteration is commonly represented as a __loop__.
-- Iteration is used to automate tasks that need to be done over and over again.
-- Iteration makes your programs simpler, faster and reduces errors.
-
-_Example: Putting your favorite song on repeat._
-
-### Selections
-
-- Specifies when to follow each path.
-
-_Example: Smartwatches notify the wearer if their heart rate goes outside the normal range ._
-
-~~~
-Real computer programs perform complex tasks by combining the 3 techniques.
-~~~
-### if-else statements
-### elif (else if)
-
-
-## Algorithms
-- __Algorithm__ is a set of step-by-step instructions to complete a task, placed in a certain order.
-### Ways to represent an algorithm
-
-- **Pseudocode** is a simplified language that is a bit closer to a programming language. It is not specific to one programming language.
-~~~
-start
-repeat until authorized = true
-  INPUT log_in
-access_granted = true
-~~~
-- **Flowcharts** help to visualize algorithms.
-
-# Loops
-## for loop
-- A **for** loop is used to execute the same instruction over and over again, a specific number of times.
+- Variables store values and can be assigned using the `=` operator.
 
 ### Example:
-~~~|
-for i in range(3):
-print("Hi Tshego.")
-~~~
-### Output
-~~~
-Hi Tshego.
-Hi Tshego.
-Hi Tshego.
-~~~
-- **Indentation** is the spaces at the beginning of lines.
-
-The code you want to display in a for loop, i.e. your print() statement, should be indented in python.
-
-- To signal the start of the iteration block, the initial loop statement must be followed by a **colon**.
-
-**NB: In general, use `for` loops when the number of iterations is known.**
-
-## While loop
-
-- They can be used even when you don’t know how many iterations will be needed.
-- `While` loops  repeat code whilst a condition holds true.
-- A `counter` is a variable that keeps track of the number of iterations.
-- An infinite loop is possible with this loop and counters help avoid them.
-
-~~~
-seats = 300  
-while seats > 0: 
-  print("Sell ticket") 
-seats = seats - 1 #counter
+~~~ 
+x = 5
+name = "Alice"
+is_active = True
 ~~~
 
-**NB: In general, use `While` loops when there is a condition that needs to be met.**
+### Data Types:
+- **int**: Integer values (`x = 5`)
+- **float**: Decimal values (`y = 5.7`)
+- **str**: Strings (`name = "Alice"`)
+- **bool**: Boolean (`is_active = True`)
 
-**NOTE**
-~~~
-Calculations with <,> results to boolean data type.
-~~~
-
-# Collections
-- `Lists` are ordered collections of items. 
-- **Lists** allow you to store a collection of multiple values in a single variable.
-- They can store any data type.
-- You can access an item in a list using its position or **index number.**
-- Negative indexing - indexing from the end.
-
-~~~
-cart = ["milk", "tea", "jam"]
+### Checking Data Types:
+~~~ 
+print(type(x))  # <class 'int'>
 ~~~
 
-## Slicing
-- `Slicing` allows you to extract a portion of a list. Starting and stopping indexes are separated by a **colon**.
-- *Strings* are **immutable** in python while _list_ are **mutable**.
-- The starting index is inclusive and the stopping index is exclusive.
-- Omitting the starting index will slice data from the first element. An in that same way, omitting the stopping index will slice until the very last element and it's called **negative indexing**. 
-- Negative indexing means that the last value of a sequence has an index of -1.
-- It's possible to combine positive with negative indexing when slicing.
+## Comments
 
-### Example
-~~~
-animals =['dog', 'cat', 'bird', 'cow'] 
-print(animals[:1]) 
+- Comments in Python are written with a `#`.
 
-~~~
-### Output
-~~~
-['dog']
+### Example:
+~~~ 
+# This is a comment
+print("Hello, World!")  # This prints a message
 ~~~
 
-# Loops and Lists
-## Iterating over Lists
+## Input and Output
 
-- To check if an item is in a particular list the `in` operator is used. It returns True if the item occurs one or more times in the list, and False if it doesn’t.
+- `print()` is used to display output, and `input()` is used to take user input.
 
-### Example
-
-~~~
-products = ['milk', 'eggs', 'apples']
-print('bread' in products)
+### Example:
+~~~ 
+name = input("Enter your name: ")
+print("Hello, " + name)
 ~~~
 
-### Output
-~~~
-False
+## Arithmetic Operators
+
+- Addition: `+`
+- Subtraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Floor Division: `//`
+- Modulus: `%`
+- Exponent: `**`
+
+### Example:
+~~~ 
+x = 5
+y = 2
+print(x + y)   # 7
+print(x ** y)  # 25
 ~~~
 
-- The __for__ loop can be used with the in operator to iterate over lists and perform the sam eoperation for each element.
+## Comparison Operators
 
-### Example
+- Equal to: `==`
+- Not equal to: `!=`
+- Greater than: `>`
+- Less than: `<`
+- Greater than or equal to: `>=`
+- Less than or equal to: `<=`
 
+### Example:
+~~~ 
+x = 5
+y = 10
+print(x > y)   # False
 ~~~
-products = ['milk', 'eggs', 'apples']
-for i in products:
+
+## Logical Operators
+
+- AND: `and`
+- OR: `or`
+- NOT: `not`
+
+### Example:
+~~~ 
+x = 5
+y = 10
+print(x > 3 and y < 20)  # True
+~~~
+
+## Conditional Statements
+
+- **if**, **elif**, and **else** are used for decision making.
+
+### Example:
+~~~ 
+age = 18
+
+if age >= 18:
+  print("You are an adult.")
+elif age > 12:
+  print("You are a teenager.")
+else:
+  print("You are a child.")
+~~~
+
+### Output:
+
+~~~ 
+You are an adult.
+~~~
+
+## Loops
+
+### For Loop:
+- Repeats a block of code for a given sequence.
+
+### Example:
+~~~ 
+for i in range(5):
   print(i)
 ~~~
 
-### Output
-~~~
-milk
-eggs
-apples
-~~~
+### Output:
 
-## Nested Loops
-
-### Example
-
-~~~
-ranks = ["Ace", "King", "Queen"]
-suits = ["Hearts", "Clubs", "Diamonds"]
-
-for rank in ranks:
-  for suit in suits:
-    print(rank, suit)
+~~~ 
+0
+1
+2
+3
+4
 ~~~
 
-### Output
+### While Loop:
+- Repeats as long as a condition is true.
 
-~~~
-Ace Hearts
-Ace Clubs
-Ace Diamonds
-King Hearts
-King Clubs
-King Diamonds
-Queen Hearts
-Queen Clubs
-Queen Diamonds
+### Example:
+~~~ 
+count = 0
+while count < 5:
+  print(count)
+  count += 1
 ~~~
 
-## Iterations and selections
+### Output:
 
-### Initializing a counter and using a for loop.
-~~~
-counter = 0
-devices = ['PC', 'TV', 'PS', 'TV', 'PS', 'Xbox', 'TV']
-for device in devices:
-  if device == 'TV':
-    counter = counter +1
-print("Number of TVs:", counter)
+~~~ 
+0
+1
+2
+3
+4
 ~~~
 
-### Output
+## Lists
+
+- A **list** stores multiple items in a single variable.
+
+### Example:
+~~~ 
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # apple
 ~~~
-Number of TVs: 3
+
+### Modifying Lists:
+~~~ 
+fruits.append("orange")
+fruits.remove("banana")
 ~~~
-### break and continue statement
 
-- The `break` statement stops a loop hen a condition is met.
+### List Methods:
+- `append()`: Add an element to the end.
+- `remove()`: Remove an element.
+- `sort()`: Sort the list.
 
+### Example:
+~~~ 
+numbers = [4, 2, 8, 1]
+numbers.sort()
+print(numbers)  # [1, 2, 4, 8]
+~~~
 
-- The `continue` statement allows you to skip the current iteration of a loop when a certain condition is true.
+## Tuples
 
-# Functions
+- A **tuple** is similar to a list, but it's immutable (cannot be changed).
+
+### Example:
+~~~ 
+colors = ("red", "green", "blue")
+print(colors[1])  # green
+~~~
+
+## Dictionaries
+
+- A **dictionary** stores data in key-value pairs.
+
+### Example:
+~~~ 
+person = {"name": "Alice", "age": 25}
+print(person["name"])  # Alice
+~~~
+
+### Modifying Dictionaries:
+~~~ 
+person["age"] = 26
+person["city"] = "New York"
+~~~
+
+### Dictionary Methods:
+- `keys()`: Returns all keys.
+- `values()`: Returns all values.
+
+### Example:
+~~~ 
+print(person.keys())    # dict_keys(['name', 'age', 'city'])
+print(person.values())  # dict_values(['Alice', 26, 'New York'])
+~~~
 
 ## Functions
 
-- A `function` contains code to perform a task, and it has to be called in order to be used.
+- A **function** is a block of reusable code that performs a specific task.
 
-- `range()` and `print()` are examples of built-in functions.
-
-## String functions
-- All these functions use __dot notation__.
-- `upper()` - Changes the string to all in uppercase.
-
-~~~
-print('Smartphone'.upper())
-# Output = SMARTPHONE
+### Defining a Function:
+~~~ 
+def greet(name):
+  print("Hello, " + name)
 ~~~
 
-- `lower()` -Changes the string to all in lowercase.
-
-
-~~~
-print('Smartphone'.lower())
-
-# Output = smartphone
+### Calling a Function:
+~~~ 
+greet("Alice")  # Output: Hello, Alice
 ~~~
 
-- `capitalize()` - Converts the first character of a string to uppercase, while making the remaining characters lowercase.
-- `find()` - checks if a character (or a pattern of characters) is present in a string. It returns `-1` if the value can't be found in the string.
+### Returning Values:
+~~~ 
+def add(x, y):
+  return x + y
 
-## Built-in list functions
-
-- `len()` - When used on lists, it returns the number of items in the list.
-- `append()` - Adds a new item at the end of a list. This function uses `dot notation` as it's specific to lists.
-- `insert()` - It allows the addition of an element to a list at a specific position.
-
-~~~
-items.insert(2,"marker")
+result = add(3, 5)
+print(result)  # 8
 ~~~
 
-- `pop()` - It removes an element from a list. The only argumentt is the index of the element to be removed.
-
-## Custom functions
-
-A **function** is a reusable block of code.
-
-### Defining a function
-
-~~~
-def greet():
-  print("Hello from a function")
-  print("Have a great day")
-~~~
-
-When this function is called, it will display the two `print()` statements.
-
-- `return()` - It sends the results of a function back. It is mostly helpful for the continuous use of the result.
-
-## More on custom functions
-
-- `rect()` - It calculates the area and perimeter of a rectangle. An it takes two paramenters, **length** and **width**.
-
-~~~
+### Multiple Parameters:
+~~~ 
 def rect(length, width):
   area = length * width
-  perimeter = 2 * length + 2 * width
-  return area, perimeter 
+  perimeter = 2 * (length + width)
+  return area, perimeter
 
-x, y = rect(50, 100) #2 variables
+x, y = rect(50, 30)
 print(x, y)
 ~~~
+
+### Output:
+
+~~~ 
+5000 300
+~~~
+
+## Parameters and Arguments
+
+- A **parameter** is the name used in a function definition for the data that the function accepts.
+
+- An **argument** is the actual value passed to the function when calling it.
+
+### Example:
+~~~ 
+def square(x):  
+  return x * x  
+
+result = square(5)
+print(result)
+~~~
+
+### Output:
+
+~~~ 
+25
+~~~
+
+## Scoping
+
+- **Global variables** are those declared outside of any function and can be accessed anywhere within the code.
+
+- **Local variables** are declared inside a function and can only be accessed within that specific function.
+
+### Example:
+~~~ 
+a = 10 # Global
+
+def example_func():  
+  b = 5  # Local  
+  print("Inside function:", b)
+
+example_func()
+print("Outside function:", a)
+~~~
+
+### Output:
+
+~~~ 
+Inside function: 5
+Outside function: 10
+~~~
+
+## File Handling
+
+Python allows you to work with files in multiple ways.
+
+### Opening a File
+- The `open()` function is used to open a file.
+
+- You can specify the mode when opening a file: 
+
+  - `'r'` for read (default mode).
+  - `'w'` for write (creates a file if it doesn’t exist).
+  - `'a'` for append (adds to the file without overwriting).
+  - `'x'` for create (returns an error if the file exists).
+
+### Example:
+
+~~~ 
+file = open("example.txt", "r")
+print(file.read())
+file.close()
+~~~
+
+### Writing to a File
+
+- Use `'w'` or `'a'` mode to write to a file.
+
+### Example:
+
+~~~ 
+file = open("example.txt", "w")
+file.write("Hello, world!")
+file.close()
+~~~
+
+### Reading from a File
+
+- You can use methods such as `read()` or `readlines()` to read content from a file.
+
+### Example:
+
+~~~ 
+file = open("example.txt", "r")
+content = file.read()
+print(content)
+file.close()
+~~~
+
+### Output:
+
+~~~ 
+Hello, world!
+~~~
+
+### With Statement
+
+- The `with` statement simplifies file handling by automatically closing the file.
+
+### Example:
+
+~~~ 
+with open("example.txt", "r") as file:
+  content = file.read()
+  print(content)
+~~~
+
+## Error Handling
+
+- Python provides error handling via the `try` and `except` blocks.
+
+- If an error occurs within the `try` block, it jumps to the `except` block.
+
+### Example:
+
+~~~ 
+try:
+  print(5/0)
+except ZeroDivisionError:
+  print("You can't divide by zero!")
+~~~
+
+### Output:
+
+~~~ 
+You can't divide by zero!
+~~~
+
+### Catching Multiple Exceptions
+
+- You can catch multiple types of exceptions by specifying multiple `except` blocks.
+
+### Example:
+
+~~~ 
+try:
+  file = open("not_existing_file.txt", "r")
+except FileNotFoundError:
+  print("File not found!")
+except Exception as e:
+  print("An error occurred:", e)
+~~~
+
+### Output:
+
+~~~ 
+File not found!
+~~~
+
+## Object-Oriented Programming (OOP)
+
+- Python supports **object-oriented programming**, which uses **objects** and **classes** to organize code.
+
+### Classes and Objects
+
+- A **class** is like a blueprint for creating objects.
+- An **object** is an instance of a class.
+
+### Example:
+
+~~~ 
+class Dog:
+  def __init__(self, name, breed):
+    self.name = name
+    self.breed = breed
+
+  def bark(self):
+    print(f"{self.name} is barking!")
+
+dog1 = Dog("Buddy", "Golden Retriever")
+dog1.bark()
+~~~
+
+### Output:
+
+~~~ 
+Buddy is barking!
+~~~
+
+### Inheritance
+
+- **Inheritance** allows one class (child class) to inherit attributes and methods from another class (parent class).
+
+### Example:
+
+~~~ 
+class Animal:
+  def speak(self):
+    print("Animal is speaking")
+
+class Dog(Animal):
+  def bark(self):
+    print("Dog is barking")
+
+dog = Dog()
+dog.speak()
+dog.bark()
+~~~
+
+### Output:
+
+~~~ 
+Animal is speaking
+Dog is barking
+~~~
+
+## Python Modules
+
+- A **module** is a file containing Python code that you can import and use in another file.
+
+### Importing a Module
+
+- Use the `import` keyword to bring in a module.
+
+### Example:
+
+~~~ 
+import math
+print(math.sqrt(16))  # 4.0
+~~~
+
+### Output:
+
+~~~ 
+4.0
+~~~
+
+### Importing Specific Functions
+
+- You can import only specific functions from a module.
+
+### Example:
+
+~~~ 
+from math import sqrt
+print(sqrt(16))  # 4.0
+~~~
+
