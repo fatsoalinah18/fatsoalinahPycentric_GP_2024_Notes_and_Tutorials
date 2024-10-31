@@ -9,7 +9,8 @@
 ### 1. Coroutines
 
 - **Coroutines** are functions defined with `async def`. They can __pause__ at `await` expressions, allowing other coroutines to run during those pauses.
-~~~
+
+```python
 import asyncio
 
 async def my_coroutine():
@@ -20,7 +21,7 @@ async def my_coroutine():
 # Running the coroutine
 asyncio.run(my_coroutine())
 
-~~~
+```
 
 The line of code `await asyncio.sleep(1)` simulates an I/O-bound operation, and it pauses the coroutine for 1 second, allowing other tasks to run concurrently.
 
@@ -35,7 +36,8 @@ The line of code `await asyncio.sleep(1)` simulates an I/O-bound operation, and 
 
 
 #### Example
-~~~
+
+```python
 import asyncio # Importing the library
 
 async def task_one():
@@ -58,8 +60,7 @@ async def main():
 
 # Running the main coroutine
 asyncio.run(main())
-
-~~~
+```
 
 #### Output
 
@@ -77,7 +78,8 @@ Task one done
 - `ansycio.gather` runs multiple coroutines concurrently. It's useful when awaiting a group of coroutines to complete.
 
 #### Example
-~~~
+
+```python
 async def task_one():
     await asyncio.sleep(1)
     return "Task one result"
@@ -91,7 +93,7 @@ async def main():
     print(results)
 
 asyncio.run(main())
-~~~
+```
 
 #### Output 
 ~~~
@@ -102,7 +104,7 @@ Task one done
 ~~~
  ### 5. Handling exceptions
  
-~~~
+```python
 async def faulty_task():
     raise ValueError("Something went wrong")
 
@@ -113,7 +115,7 @@ async def main():
         print(f"Caught an exception: {e}")
 
 asyncio.run(main())
-~~~
+```
 
 #### Output
 ~~~
@@ -126,7 +128,7 @@ Caught an exception: Something went wrong
 
 #### Example
 
-~~~
+```python
 import asyncio
 
 async def my_task():
@@ -142,7 +144,7 @@ async def main():
         print(result)
 
 asyncio.run(main())
-~~~
+```
 
 #### Output
 ~~~
@@ -159,7 +161,7 @@ Task took too long!
 - It comes to play when integrating non-`asyncio` code or doing more advanced operations.
 - `asyncio.Future()` manually creates a `Future` object.
 
-~~~
+```python
 import asyncio
 
 async def wait_for_result(future):
@@ -174,7 +176,7 @@ async def main():
 
 asyncio.run(main())
 
-~~~
+```
 
 #### Output
 ~~~
@@ -184,7 +186,8 @@ Result is ready!
 
 #### Checking if a `Future` is done
 - The code example below not only checks if a `Future` , it also checks whether it was successful of failed.
-~~~
+
+```python
 future = asyncio.Future()
 print(future.done())  # False (not yet done)
 
@@ -192,11 +195,11 @@ print(future.done())  # False (not yet done)
 future.set_result(42)
 print(future.done())  # True (the future is now completed)
 print(future.result())  # 42 (the result is ready)
-~~~
+```
 
 #### Setting Exceptions on a `Future`
 
-~~~
+```python
  async def fail_later(future):
     await asyncio.sleep(1)
     future.set_exception(ValueError("An error occurred"))
@@ -210,14 +213,15 @@ async def main():
         print(f"Caught exception: {e}")
 
 asyncio.run(main())
-~~~
+```
+
 In the above example, the `future.set_exception` sets an exception, and the future is waited, raising the specified exception.
 
 #### Using `asyncio.ensure_future()`
 
 - `asyncio.ensure_future()`is used to wrap either a couroutine or a `Future` in a `Task`. This ensures the coroutine is executed in the event loop even if the result isn't awaited immediately.
 
-~~~
+```python
 async def slow_operation():
     await asyncio.sleep(2)
     return "Slow operation result"
@@ -229,4 +233,4 @@ async def main():
     print(result)
 
 asyncio.run(main())
-~~~
+```
