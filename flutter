@@ -1,0 +1,155 @@
+# FLUTTER
+
+- To create an iOS-centric design, the Cupertino components package is used. It has it's own versions of `CupertinoApp` and `CupertinoNavigationBar`.
+
+##  BASIC FLUTTER WIDGETS
+
+`Widgets` are temporary objects, used to construct a presentation of the application in its current state.
+- `Text`  ( Needs text direction).
+- `Row`
+- `Column`
+- `Stack`
+- `Container` - Can decorated with `BoxDecoration`, such as a **background**, a **border**, or a **shadow**.  ,
+                          - It can also have margins, padding, and constraints applied to its size.
+                          - It can also be transformed in a 3D space using a matrix.
+
+## UI-RELATED CLASSES
+- StatelessWidget (**Immutable UI**) -It is used when the UI doesn't change after it is built.
+- StatefulWidget (**Dynamic UI**) - It is used when the UI changes overtime.
+
+### StatefulWidget
+- Consists of 2 classes, *StatefulWidget*(Immutable) and *State class* (Mutable).
+
+#### Scaffold
+**Scaffold** is a foundational widget that provides a basic structure for a visual interface.
+
+### **UI elements included in Scaffold**
+- **AppBar** - Top navigation bar.
+- **Body** - The main body of the content area.
+- **Floating Action Button** (**FAB**) - A button hovering over content.
+- **Bottom Navigation Bar** - For switching screens.
+- Drawer 
+- **Snackbar** - Temporary pop-up messages.
+
+## For building custom UI component, Container, Column, or Stack can be used.
+
+**Container, Column, or Stack**
+- Used when you need a **simple full-screen layout** without built-in material design features.
+
+**Stack**
+- Useful when building **custom UI layouts** that need overlays.
+
+**CupertinoPageScaffold (iOS-Styled Alternative)**
+- When designing apps that follow **Apple's iOS design guidelines**.
+
+**SafeArea for Handling Notches & Status Bars**
+- Prevents UI from being **cut off** by device **notches or status bars**.
+
+
+## Material Design Components in Flutter
+
+### 1. Basic Structure
+-   `MaterialApp` – Root widget for Material Design apps.
+-   `Scaffold` – Basic layout structure with AppBar, Drawer, FloatingActionButton, etc.
+-   `AppBar` – Top navigation bar.
+-   `BottomAppBar` – Customizable bottom bar.
+-   `Drawer` – Side navigation menu.
+
+### 2. Buttons
+-   `ElevatedButton` – Raised button with shadow.
+-   `TextButton` – Flat button with no elevation.
+-   `OutlinedButton` – Button with an outline.
+-   `FloatingActionButton` – Circular button for primary actions.
+-   `IconButton` – Button with an icon.
+-   `DropdownButton` – Button with a dropdown menu.
+
+### 3. Navigation and Routing
+-   `BottomNavigationBar` – Navigation bar at the bottom.
+-   `NavigationRail` – Sidebar navigation (for large screens).
+-   `TabBar` – Horizontal navigation tabs.
+-   `PageView` – Swipe-based page navigation.
+-   `Drawer` – Sidebar navigation panel.
+-   `Stepper` – Step-based navigation UI.
+
+### 4. Input and Forms
+-   `TextField` – User input field.
+-   `Form` – Wrapper for handling form validation.
+-   `Checkbox` – Toggle option selection.
+-   `Radio` – Radio button selection.
+-   `Switch` – On/Off toggle.
+-   `Slider` – Adjustable value selection.
+-   `DatePicker` – Select a date.
+-   `TimePicker` – Select a time.
+
+### 5. Lists and tables
+-   `ListView` – Scrollable list.
+-   `GridView` – Scrollable grid layout.
+-   `Table` – Data table.
+-   `DataTable` – Interactive table with sorting.
+-   `ExpansionTile` – Expandable list item.
+-   `ReorderableListView` – Drag-and-drop list.
+
+### 6. Cards and Containers
+-   `Card` – Material-style card UI.
+-   `Container` – General-purpose layout container.
+-   `Divider` – Thin line separator.
+-   `ExpansionPanel` – Expandable card-like UI.
+
+### 7. Dialogs and Alerts
+-   `AlertDialog` – Pop-up dialog with options.
+-   `SimpleDialog` – Pop-up with simple choices.
+-   `BottomSheet` – Slide-up menu at the bottom.
+-   `SnackBar` – Temporary message at the bottom.
+-   `Tooltip` – Small pop-up hint on hover/tap.
+
+### 8. Progress Indicators
+-   `CircularProgressIndicator` – Spinning loader.
+-   `LinearProgressIndicator` – Horizontal loading bar.
+
+### 9. Miscellaneous
+-   `Chip` – Small UI element with text and an icon.
+-   `Badge` – Small count indicator (like notifications).
+-   `PopupMenuButton` – Button with a pop-up menu.
+-   `SearchBar` – Built-in search bar widget.
+
+### **Stateless Widgets**
+
+-   **Container**: A box model that can contain other widgets with various properties like padding, margin, width, height, etc.
+-   **Text**: A simple widget to display text.
+-   **Icon**: A widget to display icons from icon libraries.
+-   **Row**: A widget to arrange children horizontally.
+-   **Column**: A widget to arrange children vertically.
+-   **Expanded**: A widget that allows its child to take up the available space.
+-   **Padding**: A widget that adds padding around its child widget.
+-   **Align**: A widget that aligns its child within itself.
+-   **Center**: A widget that centers its child within itself.
+-   **Image**: Displays an image either from an asset or a network.
+-   **ListTile**: A widget used in lists to represent a single fixed-height row, typically with a title, subtitle, and leading/trailing icons.
+-   **InkWell**: A widget that responds to touch with a "ripple" effect.
+-   **FlatButton**: A button that doesn’t have any elevation or background (now replaced by `TextButton`).
+-   **TextButton**: A flat button widget that shows only text and has no elevation.
+
+## Widget Composition
+
+Widgets are a unit of composition in Flutter. Their sole purpose is to control some aspects of another widget.
+
+#### Layout Widgets
+- Padding
+- Alignment
+- Row
+- Column
+- Grid
+
+## Building Widgets
+
+ - To create a UI, you **override** the `build` method on widget objects.
+ -   All widgets must have a build method, and it must return another widget.
+ - When creating widgets, most of them are stateless.
+ - If the unique characteristics of a widget need to change based on user interaction or other factors, that widget is stateful.
+ - For example, if a widget has a counter that increments whenever the user taps a button, then the value of the counter is the state for that widget.
+ - `StatefulWidgets` don't have a `build` method; instead, their user interface is built through their `State` object.
+
+## Handling gestures
+
+- This is the first step to building interactive apps ( detecting input gestures).
+- The `GestureDetector` widget doesn't have a visual representation but instead detects gestures made by the user.
