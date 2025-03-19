@@ -108,7 +108,40 @@ db.collection.aggregate([
 - **Sharding:** Data is distributed across multiple servers, enabling horizontal scaling. Each shard holds a portion of the dataset.
 
 ---
+# Sharding
 
+- **Sharding** is a database *partitioning* technique that splits large datasets across multiple servers **(shards)**, to improve performance, scability, and availability.
+- It is used for **huge, spread across multiple servers** databases.
+- It enables **horizontal scaling** (More servers can be added as data grows).
+- It handles **large** data (Prevents a single server from being overloaded).
+
+## How sharding works in MongoDB
+
+- Data is **split into smaller pieces (shards)** based on a **shard key**.
+- Each shard **stores only a part of the data**.
+- A **Query Router (mongos)** directs queries to the correct shard.
+- **Config servers** store metadata about shard distribution.
+
+## Example
+
+Imagine an **e-commerce database** storing **1 million orders**.
+
+-   Without sharding: **All orders are in one server → Slow queries**.
+-   With sharding:
+    -   **Orders from 2023 → Stored in Shard A**
+    -   **Orders from 2024 → Stored in Shard B**
+    -   **Orders from 2025 → Stored in Shard C**
+    -   A query for **2024 orders** goes only to **Shard B** → Faster results!
+
+
+### In order to use sharding in MongoDB, you have to : 
+  - **Enable** sharding for the database,
+  - Choose a **shard key** to determine how data is split.
+  - Add shards to the cluster.
+  - Let MongoDB distribute the data.
+- MongoDB doesn't use sharding by *default*. 
+
+---
 ## GridFS
 **GridFS** is MongoDB’s mechanism for storing large files (exceeding 16MB) by splitting them into chunks.
 
